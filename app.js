@@ -6,21 +6,25 @@ const models = require('./db');
 const cors = require('cors');
 const config = require('./config/config.js');
 
-let app;
+let app = express();
 
 process.env.NODE_ENV = 'development';
 
 const main = async () => {
   await connectDb();
-
-  app = express();
+  // app = express();
   app.use(bodyParser.json());
   app.use(cors({ origin: '*' }));
   app.use('/', usersRoutes);
 
   app.listen(global.gConfig.node_port);
+
+  console.log("App listening on port: " + global.gConfig.node_port);
 };
 
 if (!module.parent) main().then(console.log, console.log);
 
-module.exports = app;
+module.exports = {
+  server: app,
+  start: main
+}

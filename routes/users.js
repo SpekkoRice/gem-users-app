@@ -1,10 +1,10 @@
 const express = require('express');
-const users = require('../models/users');
+const Users = require('../models/users');
 const router = express.Router();
 
 router.post('/users', async (req, res, next) => {
   try {
-    const user = await users.create(req.body);
+    const user = await Users.create(req.body);
     res.send(user)
   } catch (err) {
     next(err)
@@ -13,7 +13,7 @@ router.post('/users', async (req, res, next) => {
 
 router.get('/users', async (req, res, next) => {
   try {
-    const users = await models.find(req.body);
+    const users = await Users.find(req.body);
     res.send(users);
   } catch (err) {
     next(err)
@@ -22,7 +22,7 @@ router.get('/users', async (req, res, next) => {
 
 router.get('/users/:_id', async (req, res, next) => {
   try {
-    const user = await models.findOne(req.params);
+    const user = await Users.findOne(req.params);
     res.send(user);
   } catch (err) {
     next(err);
@@ -31,7 +31,7 @@ router.get('/users/:_id', async (req, res, next) => {
 
 router.patch('/users/:_id', async (req, res, next) => {
   try {
-    const user = await models.update(req.params, req.body);
+    const user = await Users.findOneAndUpdate({_id: req.params}, req.body);
     res.send(user);
   } catch (err) {
     next(err);
@@ -40,7 +40,7 @@ router.patch('/users/:_id', async (req, res, next) => {
 
 router.delete('/users/:_id', async (req, res, next) => {
   try {
-    const results = await models.deleteOne(req.params);
+    const results = await Users.deleteOne(req.params);
     res.send(results);
   } catch (err) {
     next(err);
