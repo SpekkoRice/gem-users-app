@@ -1,6 +1,6 @@
 ## Dependencies
- - NodeJS v10.16.3
- - MongoDb 4.0+
+ - NodeJS v10.15.*
+ - MongoDb 4.*
 
 ## Installing dependencies
  - `npm install`
