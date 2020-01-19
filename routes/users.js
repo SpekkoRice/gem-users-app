@@ -31,7 +31,7 @@ router.get('/users/:_id', async (req, res, next) => {
 
 router.patch('/users/:_id', async (req, res, next) => {
   try {
-    const user = await Users.findOneAndUpdate({_id: req.params}, req.body);
+    const user = await Users.findOneAndUpdate({_id: req.params}, req.body, {new: true});
     res.send(user);
   } catch (err) {
     next(err);

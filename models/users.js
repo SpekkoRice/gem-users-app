@@ -3,6 +3,12 @@ const bcrypt = require("bcrypt");
 
 const passwordValidationError = "Password needs to have at least 8 characters";
 
+const createMongooseError = (message, code) => {
+  const error = new mongoose.mongo.MongoError(message);
+  error.code = code;
+  return error;
+};
+
 const usersSchema = new mongoose.Schema({
   email: {
     type: String,

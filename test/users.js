@@ -93,10 +93,12 @@ describe('Users', () => {
         user.save((err, user) => {
           chai.request(app.server)
           .patch('/users/' + user.id)
-          .send({ name: "new user 2", email: "user@example.com", password: "678456789" })
+          .send({ name: "new user 2", email: "user2@example.com", password: "678456789" })
           .end((err, res) => {
             res.should.have.status(200);
             res.body.should.be.a('object');
+            res.body.name.should.eql('new user 2');
+            res.body.email.should.eql('user2@example.com');
             done();
           });
         });
