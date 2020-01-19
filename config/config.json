@@ -1,0 +1,20 @@
+{
+  "development": {
+    "config_id": "development",
+    "app_name": "User App",
+    "app_desc": "A REST API to register and authenticate users",
+    "node_port": 3000,
+    "json_indentation": 2,
+    "database": "mongodb://localhost:27017/userApp"
+  },
+  "uat": {
+    "config_id": "uat",
+    "node_port": 3001,
+    "database": "mongodb://localhost:27017/userApp"
+  },
+  "test": {
+    "config_id": "test",
+    "node_port": 3002,
+    "database": "mongodb://localhost:27017/userApp"
+  }
+}

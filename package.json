@@ -1,0 +1,39 @@
+{
+  "name": "users-app",
+  "version": "1.0.0",
+  "description": "API to list register users and authenticate them",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha --timeout 10000",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/SpekkoRice/gem-users-app.git"
+  },
+  "author": "Zander Rootman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SpekkoRice/gem-users-app/issues"
+  },
+  "homepage": "https://github.com/SpekkoRice/gem-users-app#readme",
+  "dependencies": {
+    "bcrypt": "^3.0.7",
+    "body-parser": "^1.19.0",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "cors": "^2.8.5",
+    "express": "^4.14.0",
+    "lodash": "^4.17.15",
+    "mocha": "^6.2.0",
+    "mongodb": "^2.2.36",
+    "mongoose": "^5.6.4",
+    "validator": "^9.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}
